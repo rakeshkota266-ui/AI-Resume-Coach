@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+backend/.venv/
+
+# Environment variables
+.env
+backend/.env
+
+# Uploaded resumes
+uploads/*
+!uploads/.gitkeep
+
+# Node.js
+node_modules/
+.next/
+out/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
