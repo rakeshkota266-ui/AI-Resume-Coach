@@ -5,6 +5,9 @@ An AI-powered resume and career coaching platform that analyzes resumes, evaluat
 ## 🖥️ Application Preview
 
 ![AI Resume Coach](screenshots/resume-analysis.png)
+### 🎯 AI Career Discovery
+
+![AI Career Discovery](screenshots/career-discovery.png)
 
 ## 🚀 Features
 
