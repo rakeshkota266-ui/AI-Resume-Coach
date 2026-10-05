@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
 export default function Home() {
   const [file, setFile] = useState<File | null>(null);
@@ -39,7 +41,7 @@ export default function Home() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/upload-resume", {
+      const response = await fetch(`${API_BASE_URL}/upload-resume`, {
         method: "POST",
         body: formData,
       });
@@ -75,7 +77,7 @@ export default function Home() {
     setRoadmap("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/match-job", {
+      const response = await fetch("${API_BASE_URL}/match-job", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -109,7 +111,7 @@ export default function Home() {
     setAiImprovement("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/improve-resume", {
+      const response = await fetch("${API_BASE_URL}/improve-resume", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ resume_text: result.text }),
@@ -144,7 +146,7 @@ export default function Home() {
     setCareerAnalysis("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/detect-career", {
+      const response = await fetch("${API_BASE_URL}/detect-career", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ resume_text: result.text }),
@@ -184,7 +186,7 @@ export default function Home() {
     setRoadmap("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/career-roadmap", {
+      const response = await fetch("${API_BASE_URL}/career-roadmap", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
