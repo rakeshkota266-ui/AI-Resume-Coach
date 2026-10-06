@@ -18,8 +18,10 @@ app = FastAPI(title="AI Resume Coach")
 app.add_middleware(
 	CORSMiddleware,
 	allow_origins=[
+    allow_origins=[
     "http://localhost:3000",
     "https://ai-resume-coach-lake.vercel.app",
+    "https://ai-resume-coach-jllufbdgv-ai-resume-coach.vercel.app",
 ],
 	allow_credentials=True,
 	allow_methods=["*"],
