@@ -16,16 +16,15 @@ from backend.ai_coach import (
 app = FastAPI(title="AI Resume Coach")
 
 app.add_middleware(
-	CORSMiddleware,
-	allow_origins=[
+    CORSMiddleware,
     allow_origins=[
-    "http://localhost:3000",
-    "https://ai-resume-coach-lake.vercel.app",
-    "https://ai-resume-coach-jllufbdgv-ai-resume-coach.vercel.app",
-],
-	allow_credentials=True,
-	allow_methods=["*"],
-	allow_headers=["*"],
+        "http://localhost:3000",
+        "https://ai-resume-coach-lake.vercel.app",
+        "https://ai-resume-coach-jllufbdgv-ai-resume-coach.vercel.app",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 UPLOAD_DIR = Path("uploads")
