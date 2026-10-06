@@ -77,7 +77,7 @@ export default function Home() {
     setRoadmap("");
 
     try {
-      const response = await fetch("${API_BASE_URL}/match-job", {
+      const response = await fetch(`${API_BASE_URL}/match-job`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -111,11 +111,11 @@ export default function Home() {
     setAiImprovement("");
 
     try {
-      const response = await fetch("${API_BASE_URL}/improve-resume", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ resume_text: result.text }),
-      });
+  const response = await fetch(`${API_BASE_URL}/improve-resume`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ resume_text: result.text }),
+  });
 
       const data = await response.json();
 
@@ -144,13 +144,12 @@ export default function Home() {
     setCareerLoading(true);
     setError("");
     setCareerAnalysis("");
-
-    try {
-      const response = await fetch("${API_BASE_URL}/detect-career", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ resume_text: result.text }),
-      });
+try {
+  const response = await fetch(`${API_BASE_URL}/detect-career`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ resume_text: result.text }),
+  });
 
       const data = await response.json();
 
@@ -184,17 +183,16 @@ export default function Home() {
     setRoadmapLoading(true);
     setError("");
     setRoadmap("");
-
-    try {
-      const response = await fetch("${API_BASE_URL}/career-roadmap", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resume_text: result.text,
-          job_description: jobDescription,
-          missing_skills: jobResult?.missing_skills || [],
-        }),
-      });
+try {
+  const response = await fetch(`${API_BASE_URL}/career-roadmap`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      resume_text: result.text,
+      job_description: jobDescription,
+      missing_skills: jobResult?.missing_skills || [],
+    }),
+  });
 
       const data = await response.json();
 
